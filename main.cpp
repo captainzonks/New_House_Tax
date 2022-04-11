@@ -1,3 +1,13 @@
+/////////////////////
+// Matthew Barham
+// 2022-04-03
+///////////////////////////////////////////////////////////////////
+// New House Annual Mortgage
+//
+// Calculates the annual mortgage and tax savings of a new house
+// by a provided price and down payment.
+///////////////////////////////////////////////////////////////////
+
 #include <iostream>
 
 double tax_savings(double);
@@ -8,15 +18,18 @@ int main() {
     while (true) {
         double house_price{};
         double down_payment{};
+
         std::cout << "Please enter the price of your house (or 0 to quit): ";
         std::cin >> house_price;
+
         if (house_price == 0) break;
+
         std::cout << "\nPlease enter the down payment: ";
         std::cin >> down_payment;
 
-        double first_year_annual_mortgage_principal{ 0.03 * (house_price - down_payment) };
-        double first_year_annual_mortgage_interest{ 0.06 * (house_price - down_payment) };
-        double total_annual_mortgage_cost{ first_year_annual_mortgage_principal + first_year_annual_mortgage_interest };
+        double first_year_annual_mortgage_principal{0.03 * (house_price - down_payment)};
+        double first_year_annual_mortgage_interest{0.06 * (house_price - down_payment)};
+        double total_annual_mortgage_cost{first_year_annual_mortgage_principal + first_year_annual_mortgage_interest};
 
         std::cout.setf(std::ios::fixed);
         std::cout.setf(std::ios::showpoint);
